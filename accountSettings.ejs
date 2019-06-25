@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+     <link rel="stylesheet" href="/stylesheets/style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!--Material icons--> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>My Settings</title>
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #673d82">
+                <div class="container">
+                    <a class="navbar-brand text-white" href="/">PuzzleApp</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+          
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ml-auto mt-lg-0">
+                            <div class="row justify-content-md-center">
+                                <div class="col-sm-12  text-center">
+                                  <div style="display: inline-block; padding-right: 0.1%;"><a  class="btn btn-success  btn-block score" href = "/chat" role="button" > Chat </a>
+                                  </div> 
+                            <div class="dropdown" style="display: inline-block; ">
+                                <button class="btn btn-success dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Pictures </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 50%;padding-right: 0.1%;">
+                                  <a class="dropdown-item" href="/category/animals">Animals</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="/category/dogs">Dogs</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="/category/geography">Geography</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="/category/nature">Nature</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="/category/wonders">Wonders</a>
+                                </div>
+                              </div>
+            </div>
+            </div>
+                     
+                        </ul>
+                      <a class="nav-link text-white ml-2 signIn" href="/signIn" role="button">Sign in</a>
+                       <!-- Account dropdown that is shown when user is logged in -->
+                      <div class="dropdown show  account">
+                          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Account
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/accountSettings">Account Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item logOut" href="/logOut">Log out</a>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </nav>
+
+   <div class="wrapper">
+      <ul style="list-style-type: none" class='one'>          
+      <div class="smallBorder"><li><a href = "/accountSettings/changeSettings">Edit Settings</a></i></li></div> 
+      <div class="smallBorder"> <li><a href = "/deleteAccount"  class='delete' data-confirm="Are you sure you want to delete your account?">Delete Account</a></li></div>
+      <div class="smallBorder"> <li><a href ="/accountSettings/myRecords">My Records</a></li></div>
+    
+      </ul>
+   </div>
+
+   <div class="settings">
+      <i class="material-icons"></i>
+      <i class="material-icons"></i>
+
+
+     </div>
+<!-- Footer -->
+<footer class="footer ">
+        <div class="container">
+            <div class="row m-3 ">
+                <div class="col-sm-12 col-md-3 ml-5 text-center ">© 2019 PuzzleApp</div>
+                <div class="col-sm-12 col-md-6 text-center"><a class="text-secondary" href="/terms">Terms</a> <a class="text-secondary ml-3" href="/contact">Contact us</a> <a class="text-secondary ml-3" href="/report">Report bug</a></div>
+            </div>
+        </div>
+   </footer>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   <script src="/javascripts/frontend.js"></script>    
+ <script type = "text/javascript">
+  
+ var deleteAccount = document.getElementsByClassName('delete');
+
+for (var i = 0; i < deleteAccount.length; i++) {
+  deleteAccount[i].addEventListener('click', function(event) {
+	  event.preventDefault();
+	  var confirmation = confirm(this.getAttribute('data-confirm'));
+	  if (confirmation) {
+        document.cookie = "logedIn=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        document.cookie = "time=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+	    window.location.href = this.getAttribute('href');
+	  }
+  });
+}
+
+ 
+
+</script> 
+</body>
+</html>
